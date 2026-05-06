@@ -39,7 +39,7 @@ export async function getProjects(): Promise<Project[]> {
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     if (!url || !key) return STATIC_PROJECTS
 
-    const res = await fetch(`${url}/rest/v1/projects?select=*&order=order_index`, {
+    const res = await fetch(`${url}/rest/v1/projects_addus?select=*&order=order_index`, {
       headers: { apikey: key, Authorization: `Bearer ${key}` },
       next: { revalidate: 60 },
     })

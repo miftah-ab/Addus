@@ -4,7 +4,7 @@
 -- ============================================================
 
 -- PROJECTS TABLE
-create table if not exists projects (
+create table if not exists projects_addus (
   id            uuid primary key default gen_random_uuid(),
   name          text not null,
   description   text not null,
@@ -19,7 +19,7 @@ create table if not exists projects (
 );
 
 -- CONTACT SUBMISSIONS TABLE
-create table if not exists contact_submissions (
+create table if not exists contact_submissions_addus (
   id          uuid primary key default gen_random_uuid(),
   name        text not null,
   email       text not null,
@@ -31,34 +31,34 @@ create table if not exists contact_submissions (
 -- ROW LEVEL SECURITY
 -- ============================================================
 
-alter table projects enable row level security;
-alter table contact_submissions enable row level security;
+alter table projects_addus enable row level security;
+alter table contact_submissions_addus enable row level security;
 
 -- Anyone can read projects (public portfolio)
 create policy "Public can read projects"
-  on projects for select
+  on projects_addus for select
   using (true);
 
 -- Only service role can insert/update/delete projects
 create policy "Service role manages projects"
-  on projects for all
+  on projects_addus for all
   using (auth.role() = 'service_role');
 
 -- Anyone can insert a contact submission (the contact form)
 create policy "Anyone can submit contact"
-  on contact_submissions for insert
+  on contact_submissions_addus for insert
   with check (true);
 
 -- Only service role can read contact submissions
 create policy "Service role reads contacts"
-  on contact_submissions for select
+  on contact_submissions_addus for select
   using (auth.role() = 'service_role');
 
 -- ============================================================
 -- SEED DATA — Projects
 -- ============================================================
 
-insert into projects (name, description, tech_stack, live_url, github_url, category, featured, order_index)
+insert into projects_addus (name, description, tech_stack, live_url, github_url, category, featured, order_index)
 values
   (
     'LaunchFast',
