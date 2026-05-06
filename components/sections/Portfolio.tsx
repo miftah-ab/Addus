@@ -25,26 +25,28 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
       style={{ padding: '120px 80px', background: 'var(--bg-secondary)', position: 'relative', zIndex: 1 }}
     >
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <span className="section-label">{'// what we\'ve shipped'}</span>
+        <span id="portfolio-label" className="section-label">{'// what we\'ve shipped'}</span>
 
         <div
           ref={headRef}
+          id="portfolio-header"
           style={{
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.7s ease, transform 0.7s ease',
           }}
         >
-          <h2 className="font-clash text-display" style={{ color: 'var(--text-primary)', marginBottom: 40 }}>
+          <h2 id="portfolio-headline" className="font-clash text-display" style={{ color: 'var(--text-primary)', marginBottom: 40 }}>
             Real products.<br />Real code.
           </h2>
         </div>
 
         {/* Filter pills */}
-        <div style={{ display: 'flex', gap: 10, marginBottom: 48, flexWrap: 'wrap' }}>
+        <div id="portfolio-filters" style={{ display: 'flex', gap: 10, marginBottom: 48, flexWrap: 'wrap' }}>
           {FILTERS.map(f => (
             <button
               key={f.value}
+              id={`filter-${f.value}`}
               onClick={() => setActive(f.value)}
               data-hover
               style={{

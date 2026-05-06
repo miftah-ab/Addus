@@ -71,17 +71,18 @@ export default function Services() {
       }}
     >
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <span className="section-label">{'// what we build'}</span>
+        <span id="services-label" className="section-label">{'// what we build'}</span>
 
         <div
           ref={headRef}
+          id="services-header"
           style={{
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.7s ease, transform 0.7s ease',
           }}
         >
-          <h2 className="font-clash text-display" style={{ color: 'var(--text-primary)', marginBottom: 64 }}>
+          <h2 id="services-headline" className="font-clash text-display" style={{ color: 'var(--text-primary)', marginBottom: 64 }}>
             Three things.<br />Done right.
           </h2>
         </div>

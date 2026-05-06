@@ -32,6 +32,7 @@ export default function Hero() {
     >
       {/* Available for work pill */}
       <div
+        id="hero-availability"
         style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
           padding: '6px 14px', borderRadius: 100,
@@ -49,6 +50,7 @@ export default function Hero() {
 
       {/* Main headline */}
       <h1
+        id="hero-headline"
         className="font-clash text-hero"
         style={{
           color: 'var(--text-primary)',
@@ -62,6 +64,7 @@ export default function Hero() {
 
       {/* Morphing sub */}
       <div
+        id="hero-morph-wrapper"
         style={{
           fontSize: 'var(--text-lg)', color: 'var(--text-secondary)',
           marginTop: 24, marginBottom: 12,
@@ -75,6 +78,7 @@ export default function Hero() {
 
       {/* Description */}
       <p
+        id="hero-description"
         style={{
           fontSize: 'var(--text-md)', color: 'var(--text-secondary)',
           maxWidth: 480, lineHeight: 1.7,
@@ -88,13 +92,14 @@ export default function Hero() {
 
       {/* CTAs */}
       <div
+        id="hero-ctas"
         style={{
           display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center',
           animation: 'fade-up 0.8s ease 0.55s both',
         }}
       >
-        <MagneticButton href="#work" variant="primary">See our work</MagneticButton>
-        <MagneticButton href="#contact" variant="ghost">Let&apos;s talk</MagneticButton>
+        <MagneticButton href="#work" variant="primary" id="hero-cta-work">See our work</MagneticButton>
+        <MagneticButton href="#contact" variant="ghost" id="hero-cta-contact">Let&apos;s talk</MagneticButton>
       </div>
 
       {/* Scroll arrow */}

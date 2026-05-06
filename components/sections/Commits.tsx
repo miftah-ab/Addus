@@ -14,23 +14,23 @@ export default function Commits({ commits }: { commits: CommitData[] }) {
       style={{ padding: '120px 80px', background: 'var(--bg-primary)', position: 'relative', zIndex: 1 }}
     >
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <span className="section-label">{'// always building'}</span>
+        <span id="commits-label" className="section-label">{'// always building'}</span>
 
         <div
           ref={headRef}
+          id="commits-header"
           style={{
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.7s ease, transform 0.7s ease',
-            marginBottom: 12,
           }}
         >
-          <h2 className="font-clash text-display" style={{ color: 'var(--text-primary)' }}>
+          <h2 id="commits-headline" className="font-clash text-display" style={{ color: 'var(--text-primary)', marginBottom: 12 }}>
             Open GitHub.<br />See the proof.
           </h2>
         </div>
 
-        <p style={{ fontSize: 14, color: 'var(--text-tertiary)', fontFamily: 'var(--font-geist-mono)', marginBottom: 40 }}>
+        <p id="commits-sub" style={{ fontSize: 16, color: 'var(--text-secondary)', marginBottom: 48, fontFamily: 'var(--font-geist-mono)', opacity: 0.7 }}>
           Latest commits — updated in real time
         </p>
 

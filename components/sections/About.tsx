@@ -1,6 +1,7 @@
 'use client'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import Image from 'next/image'
 
 export default function About() {
   const ref = useRef(null)
@@ -17,6 +18,7 @@ export default function About() {
     >
       <div
         ref={ref}
+        id="about-container"
         style={{
           maxWidth: 1200, margin: '0 auto',
           display: 'grid', gridTemplateColumns: '1fr 1fr',
@@ -26,6 +28,7 @@ export default function About() {
       >
         {/* Left — Photo */}
         <div
+          id="about-photo-wrapper"
           style={{
             position: 'relative', overflow: 'hidden',
             background: '#0a0a0a',
@@ -39,7 +42,9 @@ export default function About() {
             zIndex: 0,
           }} />
           {/* Photo placeholder — editorial dark */}
-          <div style={{
+          <div 
+            id="about-builder-card"
+            style={{
             position: 'relative', zIndex: 1,
             width: '100%', height: '100%', minHeight: 480,
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -55,7 +60,7 @@ export default function About() {
             }}>
               <span className="font-clash" style={{ fontSize: 48, color: 'rgba(0,255,136,0.4)' }}>M</span>
             </div>
-            <span style={{ fontFamily: 'var(--font-geist-mono)', fontSize: 11, color: 'var(--text-tertiary)', letterSpacing: '0.2em' }}>
+            <span id="about-builder-name" style={{ fontFamily: 'var(--font-geist-mono)', fontSize: 11, color: 'var(--text-tertiary)', letterSpacing: '0.2em' }}>
               MIFTAH ABATE
             </span>
           </div>
@@ -70,6 +75,7 @@ export default function About() {
 
         {/* Right — Text */}
         <div
+          id="about-text-content"
           style={{
             padding: '80px 64px',
             display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -78,8 +84,8 @@ export default function About() {
             transition: 'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s',
           }}
         >
-          <span className="section-label">{'// the builder'}</span>
-          <h2 className="font-clash" style={{ fontSize: 'clamp(32px, 4vw, 52px)', color: 'var(--text-primary)', lineHeight: 1.1, marginBottom: 32 }}>
+          <span id="about-label" className="section-label">{'// the builder'}</span>
+          <h2 id="about-headline" className="font-clash" style={{ fontSize: 'clamp(32px, 4vw, 52px)', color: 'var(--text-primary)', lineHeight: 1.1, marginBottom: 32 }}>
             Miftah Abate.<br />Full stack engineer.
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

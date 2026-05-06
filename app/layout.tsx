@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   description: 'Addus is an AI products and automation company. We build AI systems, SaaS products, and automation tools that work from day one. Founded by Miftah Abate.',
   keywords: ['AI automation', 'SaaS development', 'AI integration', 'full stack development', 'Miftah Abate', 'Addus'],
   authors: [{ name: 'Miftah Abate' }],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: "Addus — We Build What's Next",
     description: 'AI products and automation. Built to ship.',

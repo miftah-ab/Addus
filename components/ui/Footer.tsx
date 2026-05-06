@@ -8,6 +8,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="main-footer"
       style={{
         padding: '32px 80px',
         borderTop: '1px solid var(--border)',
@@ -19,10 +20,10 @@ export default function Footer() {
         zIndex: 1,
       }}
     >
-      <span style={{ fontSize: 13, color: 'var(--text-tertiary)', fontFamily: 'var(--font-geist)' }}>
+      <span id="copyright" style={{ fontSize: 13, color: 'var(--text-tertiary)', fontFamily: 'var(--font-geist)' }}>
         Addus © 2026
       </span>
-      <div style={{ display: 'flex', gap: 24 }}>
+      <div id="footer-socials" style={{ display: 'flex', gap: 24 }}>
         {links.map(l => (
           <a
             key={l.label}

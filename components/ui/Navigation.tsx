@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 
+import Image from 'next/image'
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -18,14 +20,15 @@ export default function Navigation() {
   }, [menuOpen])
 
   const links = [
-    { label: 'Work', href: '#work' },
-    { label: 'Services', href: '#services' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Work', href: '#work', id: 'nav-work' },
+    { label: 'Services', href: '#services', id: 'nav-services' },
+    { label: 'Contact', href: '#contact', id: 'nav-contact' },
   ]
 
   return (
     <>
       <nav
+        id="main-nav"
         style={{
           position: 'fixed', top: 0, left: 0, right: 0,
           zIndex: 1000, padding: '0 40px',
@@ -37,7 +40,10 @@ export default function Navigation() {
           transition: 'background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease',
         }}
       >
-        <a href="#" className="font-clash" style={{ fontSize: 20, color: 'var(--text-primary)', textDecoration: 'none', letterSpacing: '-0.02em' }} data-hover>
+        <a href="#" id="nav-home" className="font-clash" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 20, color: 'var(--text-primary)', textDecoration: 'none', letterSpacing: '-0.02em' }} data-hover>
+          <div style={{ position: 'relative', width: 24, height: 24 }}>
+            <Image src="/favicon-32x32.png" alt="Addus Logo" fill style={{ objectFit: 'contain' }} />
+          </div>
           Addus
         </a>
 

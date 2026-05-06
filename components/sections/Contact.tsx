@@ -1,6 +1,6 @@
 'use client'
 import { useState, useRef } from 'react'
-import { useInView } from 'framer-motion'
+import { useInView, motion, AnimatePresence } from 'framer-motion'
 import MagneticButton from '@/components/ui/MagneticButton'
 
 export default function Contact() {
@@ -40,7 +40,7 @@ export default function Contact() {
       }}
     >
       <div style={{ width: '100%', maxWidth: 560 }}>
-        <span className="section-label" style={{ textAlign: 'center', display: 'block' }}>{'// get in touch'}</span>
+        <span id="contact-label" className="section-label" style={{ textAlign: 'center', display: 'block' }}>{'// get in touch'}</span>
 
         <div
           ref={headRef}
@@ -60,42 +60,59 @@ export default function Contact() {
           Have a project in mind? Want to hire a builder?<br />Just want to say hello?
         </p>
 
-        {state === 'success' ? (
-          <div style={{
-            padding: '32px', background: 'rgba(0,255,136,0.05)',
-            border: '1px solid rgba(0,255,136,0.2)', borderRadius: 12,
-            textAlign: 'center',
-          }}>
-            <p className="text-green" style={{ fontSize: 16, fontFamily: 'var(--font-geist-mono)' }}>
-              ✓ Got it. I&apos;ll be in touch within 24 hours.
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Your name"
-              value={form.name}
-              onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-              required
-            />
-            <input
-              className="form-input"
-              type="email"
-              placeholder="Your email"
-              value={form.email}
-              onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-              required
-            />
-            <textarea
-              className="form-input"
-              placeholder="Tell me about your project..."
-              rows={5}
-              value={form.message}
-              onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-              required
-            />
+        <AnimatePresence mode="wait">
+          {state === 'success' ? (
+            <motion.div 
+              key="success"
+              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+              style={{
+                padding: '32px', background: 'rgba(0,255,136,0.05)',
+                border: '1px solid rgba(0,255,136,0.2)', borderRadius: 12,
+                textAlign: 'center',
+              }}
+            >
+              <p className="text-green" style={{ fontSize: 16, fontFamily: 'var(--font-geist-mono)' }}>
+                ✓ Got it. I&apos;ll be in touch within 24 hours.
+              </p>
+            </motion.div>
+          ) : (
+            <motion.form 
+              key="form"
+              id="contact-form"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0, y: -10 }}
+              onSubmit={handleSubmit} 
+              style={{ display: 'flex', flexDirection: 'column', gap: 16 }}
+            >
+              <input
+                id="contact-name"
+                className="form-input"
+                type="text"
+                placeholder="Your name"
+                value={form.name}
+                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                required
+              />
+              <input
+                id="contact-email"
+                className="form-input"
+                type="email"
+                placeholder="Your email"
+                value={form.email}
+                onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                required
+              />
+              <textarea
+                id="contact-message"
+                className="form-input"
+                placeholder="Tell me about your project..."
+                rows={5}
+                value={form.message}
+                onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                required
+              />
             {state === 'error' && (
               <p style={{ color: '#ff6b6b', fontSize: 13, fontFamily: 'var(--font-geist-mono)' }}>
                 Something went wrong. Email directly at hello@addus.xyz
@@ -108,8 +125,9 @@ export default function Contact() {
             >
               {state === 'loading' ? 'Sending...' : 'Send it →'}
             </MagneticButton>
-          </form>
-        )}
+            </motion.form>
+          )}
+        </AnimatePresence>
 
         <p style={{ textAlign: 'center', marginTop: 32, fontSize: 13, color: 'var(--text-tertiary)' }}>
           Or reach out directly —{' '}

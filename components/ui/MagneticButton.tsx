@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 
 interface Props {
   children: React.ReactNode
+  id?: string
   className?: string
   style?: React.CSSProperties
   onClick?: () => void
@@ -11,7 +12,7 @@ interface Props {
   variant?: 'primary' | 'ghost'
 }
 
-export default function MagneticButton({ children, className = '', style, onClick, href, type = 'button', variant = 'primary' }: Props) {
+export default function MagneticButton({ children, id, className = '', style, onClick, href, type = 'button', variant = 'primary' }: Props) {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -45,14 +46,14 @@ export default function MagneticButton({ children, className = '', style, onClic
 
   if (href) {
     return (
-      <a ref={ref as React.Ref<HTMLAnchorElement>} href={href} className={cls} style={style} data-hover>
+      <a ref={ref as React.Ref<HTMLAnchorElement>} id={id} href={href} className={cls} style={style} data-hover>
         {children}
       </a>
     )
   }
 
   return (
-    <button ref={ref as React.Ref<HTMLButtonElement>} type={type} onClick={onClick} className={cls} style={style} data-hover>
+    <button ref={ref as React.Ref<HTMLButtonElement>} id={id} type={type} onClick={onClick} className={cls} style={style} data-hover>
       {children}
     </button>
   )

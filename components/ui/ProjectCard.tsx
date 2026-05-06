@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { Project } from '@/lib/types'
-import clsx from 'clsx'
 
 interface Props {
   project: Project
@@ -74,10 +74,11 @@ export default function ProjectCard({ project }: Props) {
         </div>
         {/* Scale image on hover */}
         {project.image_url && (
-          <img
+          <Image
             src={project.image_url}
             alt={project.name}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="absolute inset-0 object-cover"
             style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.4s ease' }}
           />
         )}

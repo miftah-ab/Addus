@@ -5,6 +5,7 @@ export default function MarqueeStrip() {
 
   return (
     <div
+      id="marquee"
       style={{
         background: 'var(--bg-secondary)',
         borderTop: '1px solid var(--border)',
