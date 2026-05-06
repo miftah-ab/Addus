@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   keywords: ['AI automation', 'SaaS development', 'AI integration', 'full stack development', 'Miftah Abate', 'Addus'],
   authors: [{ name: 'Miftah Abate' }],
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/symbol.png',
+    apple: '/symbol.png',
   },
   openGraph: {
     title: "Addus — We Build What's Next",

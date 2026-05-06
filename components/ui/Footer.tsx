@@ -20,8 +20,8 @@ export default function Footer() {
         zIndex: 1,
       }}
     >
-      <span id="copyright" style={{ fontSize: 13, color: 'var(--text-tertiary)', fontFamily: 'var(--font-geist)' }}>
-        Addus © 2026
+      <span id="copyright" style={{ fontSize: 13, color: 'var(--text-tertiary)', fontFamily: 'var(--font-geist)', letterSpacing: '0.04em' }}>
+        ADDUS © 2026
       </span>
       <div id="footer-socials" style={{ display: 'flex', gap: 24 }}>
         {links.map(l => (

@@ -36,14 +36,14 @@ export default function Hero() {
         style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
           padding: '6px 14px', borderRadius: 100,
-          border: '1px solid rgba(0,255,136,0.2)',
-          background: 'rgba(0,255,136,0.05)',
+          border: '1px solid var(--border)',
+          background: 'rgba(255,255,255,0.02)',
           marginBottom: 48,
           animation: 'fade-up 0.8s ease 0.1s both',
         }}
       >
-        <div className="pulse-dot" style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent-green)' }} />
-        <span style={{ fontFamily: 'var(--font-geist-mono)', fontSize: 12, color: 'var(--accent-green)', opacity: 0.85 }}>
+        <div className="pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-green)' }} />
+        <span style={{ fontFamily: 'var(--font-geist-mono)', fontSize: 11, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           Available for work
         </span>
       </div>

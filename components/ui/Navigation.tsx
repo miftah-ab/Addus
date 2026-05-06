@@ -40,11 +40,22 @@ export default function Navigation() {
           transition: 'background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease',
         }}
       >
-        <a href="#" id="nav-home" className="font-clash" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 20, color: 'var(--text-primary)', textDecoration: 'none', letterSpacing: '-0.02em' }} data-hover>
+        <a href="#" id="nav-home" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }} data-hover>
           <div style={{ position: 'relative', width: 24, height: 24 }}>
-            <Image src="/favicon-32x32.png" alt="Addus Logo" fill style={{ objectFit: 'contain' }} />
+            <Image src="/symbol.png" alt="ADDUS Symbol" fill style={{ objectFit: 'contain' }} />
           </div>
-          Addus
+          <span 
+            style={{ 
+              fontFamily: 'var(--font-clash)', 
+              fontWeight: 600, 
+              letterSpacing: '0.08em', 
+              fontSize: '20px', 
+              color: '#F0EDE6',
+              lineHeight: 1
+            }}
+          >
+            ADDUS
+          </span>
         </a>
 
         {/* Desktop links */}
