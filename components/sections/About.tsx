@@ -91,7 +91,7 @@ export default function About() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {[
               'I build AI products and automation systems that actually work.',
-              'BSc Information Technology. 5+ years shipping products from scratch auth, payments, databases, deployment, AI integration. The full stack.',
+              'Shipping products from scratch auth, payments, databases, deployment, AI integration. The full stack.',
               'Founded Addus to build systems for businesses that are ready to move faster with AI.',
               'Currently: open to full-time roles and interesting freelance projects.',
             ].map((text, i) => (

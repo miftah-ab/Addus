@@ -11,6 +11,7 @@ export const STATIC_PROJECTS: Project[] = [
     category: 'saas',
     featured: true,
     order_index: 1,
+    image_url: '/projects/launchfast.png',
   },
   {
     id: '2',
@@ -22,6 +23,7 @@ export const STATIC_PROJECTS: Project[] = [
     category: 'ai-tools',
     featured: true,
     order_index: 2,
+    image_url: '/projects/emitto.png',
   },
   {
     id: '3',
@@ -31,6 +33,7 @@ export const STATIC_PROJECTS: Project[] = [
     category: 'automation',
     order_index: 3,
     live_url: 'https://t.me/ZareOfficialBot',
+    image_url: '/projects/zare.png',
   },
 ]
 
