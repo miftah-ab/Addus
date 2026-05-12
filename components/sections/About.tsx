@@ -26,7 +26,7 @@ export default function About() {
         }}
         className="about-grid"
       >
-        {/* Left — Photo */}
+        {/* Left Photo */}
         <div
           id="about-photo-wrapper"
           style={{
@@ -41,7 +41,7 @@ export default function About() {
             background: 'radial-gradient(ellipse at 50% 60%, rgba(0,255,136,0.08) 0%, transparent 70%)',
             zIndex: 0,
           }} />
-          {/* Photo placeholder — editorial dark */}
+          {/* Photo placeholder editorial dark */}
           <div 
             id="about-builder-card"
             style={{
@@ -73,7 +73,7 @@ export default function About() {
           }} />
         </div>
 
-        {/* Right — Text */}
+        {/* Right Text */}
         <div
           id="about-text-content"
           style={{
@@ -91,7 +91,7 @@ export default function About() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {[
               'I build AI products and automation systems that actually work.',
-              'BSc Information Technology. 5+ years shipping products from scratch — auth, payments, databases, deployment, AI integration. The full stack.',
+              'BSc Information Technology. 5+ years shipping products from scratch auth, payments, databases, deployment, AI integration. The full stack.',
               'Founded Addus to build systems for businesses that are ready to move faster with AI.',
               'Currently: open to full-time roles and interesting freelance projects.',
             ].map((text, i) => (
@@ -101,14 +101,14 @@ export default function About() {
             ))}
           </div>
           <div style={{ display: 'flex', gap: 24, marginTop: 40 }}>
-            <a href="https://linkedin.com/in/miftah-abate" target="_blank" rel="noopener noreferrer" data-hover
+            <a href="https://www.linkedin.com/in/miftah-abate-26" target="_blank" rel="noopener noreferrer" data-hover
               className="text-green" style={{ fontSize: 14, opacity: 0.8, transition: 'opacity 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
               onMouseLeave={e => (e.currentTarget.style.opacity = '0.8')}
             >
               View LinkedIn →
             </a>
-            <a href="https://github.com/ki706" target="_blank" rel="noopener noreferrer" data-hover
+            <a href="https://github.com/miftah-ab" target="_blank" rel="noopener noreferrer" data-hover
               className="text-green" style={{ fontSize: 14, opacity: 0.6, transition: 'opacity 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
               onMouseLeave={e => (e.currentTarget.style.opacity = '0.6')}

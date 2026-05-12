@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: web3formsKey,
-          subject: `New contact from ${name} — Addus`,
+          subject: `New contact from ${name} Addus`,
           from_name: 'Addus Website',
           name: name.trim(),
           email: email.trim(),

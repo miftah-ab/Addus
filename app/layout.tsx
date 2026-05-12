@@ -4,6 +4,8 @@ import './globals.css'
 import Navigation from '@/components/ui/Navigation'
 import Footer from '@/components/ui/Footer'
 import CustomCursor from '@/components/ui/CustomCursor'
+import BackToTop from '@/components/ui/BackToTop'
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   variable: '--font-geist',
@@ -20,8 +22,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Addus — We Build What's Next",
-  description: 'Addus is an AI products and automation company. We build AI systems, SaaS products, and automation tools that work from day one. Founded by Miftah Abate.',
+  title: "Addus I Build What's Next",
+  description: 'Addus is an AI products and automation company. I build AI systems, SaaS products, and automation tools that work from day one. Founded by Miftah Abate.',
   keywords: ['AI automation', 'SaaS development', 'AI integration', 'full stack development', 'Miftah Abate', 'Addus'],
   authors: [{ name: 'Miftah Abate' }],
   icons: {
@@ -29,14 +31,14 @@ export const metadata: Metadata = {
     apple: '/symbol.png',
   },
   openGraph: {
-    title: "Addus — We Build What's Next",
+    title: "Addus I Build What's Next",
     description: 'AI products and automation. Built to ship.',
     type: 'website',
     url: 'https://addus.xyz',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Addus — We Build What's Next",
+    title: "Addus I Build What's Next",
     description: 'AI products and automation. Built to ship.',
   },
 }
@@ -56,6 +58,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
+        <Analytics />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -6,7 +6,7 @@ const SERVICES = [
   {
     num: '01',
     title: 'AI Automation Systems',
-    description: 'We build AI agents that qualify leads, process documents, automate workflows, and handle repetitive tasks — so your team focuses on what matters.',
+    description: 'I build AI agents that qualify leads, process documents, automate workflows, and handle repetitive tasks so your team focuses on what matters.',
     pill: 'Most popular',
   },
   {
@@ -18,7 +18,7 @@ const SERVICES = [
   {
     num: '03',
     title: 'AI Integration',
-    description: 'Take your existing business and make it intelligent. We add AI to your workflows, customer touchpoints, and internal tools.',
+    description: 'Take your existing business and make it intelligent. I add AI to your workflows, customer touchpoints, and internal tools.',
     pill: null,
   },
 ]
@@ -71,7 +71,7 @@ export default function Services() {
       }}
     >
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <span id="services-label" className="section-label">{'// what we build'}</span>
+        <span id="services-label" className="section-label">{'// what I build'}</span>
 
         <div
           ref={headRef}

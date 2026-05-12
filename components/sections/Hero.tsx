@@ -30,23 +30,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Available for work pill */}
-      <div
-        id="hero-availability"
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: 8,
-          padding: '6px 14px', borderRadius: 100,
-          border: '1px solid var(--border)',
-          background: 'rgba(255,255,255,0.02)',
-          marginBottom: 48,
-          animation: 'fade-up 0.8s ease 0.1s both',
-        }}
-      >
-        <div className="pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-green)' }} />
-        <span style={{ fontFamily: 'var(--font-geist-mono)', fontSize: 11, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-          Available for work
-        </span>
-      </div>
+
 
       {/* Main headline */}
       <h1
@@ -58,7 +42,7 @@ export default function Hero() {
           animation: 'fade-up 0.8s ease 0.2s both',
         }}
       >
-        We build<br />
+        I build<br />
         <span className="text-green">what&rsquo;s next.</span>
       </h1>
 
@@ -86,7 +70,7 @@ export default function Hero() {
           animation: 'fade-up 0.8s ease 0.45s both',
         }}
       >
-        From AI automation to full SaaS products — we build
+        From AI automation to full SaaS products I build
         systems that work from day one.
       </p>
 
@@ -98,7 +82,7 @@ export default function Hero() {
           animation: 'fade-up 0.8s ease 0.55s both',
         }}
       >
-        <MagneticButton href="#work" variant="primary" id="hero-cta-work">See our work</MagneticButton>
+        <MagneticButton href="#work" variant="primary" id="hero-cta-work">See my work</MagneticButton>
         <MagneticButton href="#contact" variant="ghost" id="hero-cta-contact">Let&apos;s talk</MagneticButton>
       </div>
 

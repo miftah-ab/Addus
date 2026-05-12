@@ -25,11 +25,12 @@ export const STATIC_PROJECTS: Project[] = [
   },
   {
     id: '3',
-    name: 'Lead Qualification Agent',
-    description: 'AI agent that qualifies leads via Telegram, scores them 1–10, and notifies brokers instantly.',
-    tech_stack: ['Next.js', 'TypeScript', 'Telegram Bot API', 'Groq AI', 'Supabase'],
+    name: 'Zare',
+    description: 'Telegram dating bot.',
+    tech_stack: ['Next.js', 'TypeScript', 'Telegram Bot API', 'Supabase'],
     category: 'automation',
     order_index: 3,
+    live_url: 'https://t.me/ZareOfficialBot',
   },
 ]
 

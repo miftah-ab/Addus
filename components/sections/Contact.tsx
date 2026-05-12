@@ -115,7 +115,7 @@ export default function Contact() {
               />
             {state === 'error' && (
               <p style={{ color: '#ff6b6b', fontSize: 13, fontFamily: 'var(--font-geist-mono)' }}>
-                Something went wrong. Email directly at hello@addus.xyz
+                Something went wrong. Email directly at mifab2026@gmail.com
               </p>
             )}
             <MagneticButton
@@ -130,16 +130,16 @@ export default function Contact() {
         </AnimatePresence>
 
         <p style={{ textAlign: 'center', marginTop: 32, fontSize: 13, color: 'var(--text-tertiary)' }}>
-          Or reach out directly —{' '}
+          Or reach out directly {' '}
           <a
-            href="mailto:hello@addus.xyz"
+            href="mailto:mifab2026@gmail.com"
             className="text-green"
             data-hover
             style={{ opacity: 0.8, transition: 'opacity 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
             onMouseLeave={e => (e.currentTarget.style.opacity = '0.8')}
           >
-            hello@addus.xyz
+            mifab2026@gmail.com
           </a>
         </p>
       </div>
