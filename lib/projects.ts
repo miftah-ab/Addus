@@ -28,9 +28,9 @@ export const STATIC_PROJECTS: Project[] = [
   {
     id: '3',
     name: 'Zare',
-    description: 'Telegram dating bot.',
-    tech_stack: ['Next.js', 'TypeScript', 'Telegram Bot API', 'Supabase'],
-    category: 'automation',
+    description: 'Ethiopian dating platform built inside Telegram. Culturally relevant matching based on ethnicity, language, religion, and dating goals. Ethiopian payments (Telebirr, CBE, Telegram Stars), premium subscription tiers, and a real-time admin moderation dashboard.',
+    tech_stack: ['Cloudflare Workers', 'Telegram Bot API', 'React', 'Vite', 'Tailwind CSS', 'Telebirr'],
+    category: 'saas',
     order_index: 3,
     live_url: 'https://t.me/ZareOfficialBot',
     image_url: '/projects/zare.png',
