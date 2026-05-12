@@ -3,6 +3,8 @@ import { useState, useRef } from 'react'
 import { useInView, motion, AnimatePresence } from 'framer-motion'
 import MagneticButton from '@/components/ui/MagneticButton'
 
+const WEB3FORMS_KEY = 'b2e9868b-f167-41ec-aba8-cd0dc1eac91e'
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [state, setState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -13,12 +15,20 @@ export default function Contact() {
     e.preventDefault()
     setState('loading')
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New contact from ${form.name} - Addus`,
+          from_name: 'Addus Website',
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
       })
-      if (res.ok) {
+      const data = await res.json()
+      if (data.success) {
         setState('success')
         setForm({ name: '', email: '', message: '' })
       } else {
