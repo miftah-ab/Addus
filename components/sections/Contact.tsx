@@ -115,7 +115,7 @@ export default function Contact() {
               />
             {state === 'error' && (
               <p style={{ color: '#ff6b6b', fontSize: 13, fontFamily: 'var(--font-geist-mono)' }}>
-                Something went wrong. Email directly at mifab2026@gmail.com
+                Something went wrong. Please try again.
               </p>
             )}
             <MagneticButton
