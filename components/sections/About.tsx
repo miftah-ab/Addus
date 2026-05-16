@@ -100,7 +100,7 @@ export default function About() {
             ))}
           </div>
           <div style={{ display: 'flex', gap: 24, marginTop: 40 }}>
-            <a href="https://www.linkedin.com/in/miftah-abate-26" target="_blank" rel="noopener noreferrer" data-hover
+            <a href="https://www.linkedin.com/in/miftah-abate-addus" target="_blank" rel="noopener noreferrer" data-hover
               className="text-green" style={{ fontSize: 14, opacity: 0.8, transition: 'opacity 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
               onMouseLeave={e => (e.currentTarget.style.opacity = '0.8')}

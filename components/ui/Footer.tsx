@@ -1,7 +1,7 @@
 'use client'
 export default function Footer() {
   const links = [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/miftah-abate-26' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/miftah-abate-addus' },
     { label: 'GitHub', href: 'https://github.com/miftah-ab' },
     { label: 'X', href: 'https://x.com/Mif_Abate' },
   ]
