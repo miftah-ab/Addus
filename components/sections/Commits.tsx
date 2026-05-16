@@ -46,7 +46,7 @@ export default function Commits({ commits }: { commits: CommitData[] }) {
 
         <div style={{ marginTop: 32, textAlign: 'center' }}>
           <a
-            href="https://github.com/ki706"
+            href="https://github.com/miftah-ab"
             target="_blank"
             rel="noopener noreferrer"
             data-hover

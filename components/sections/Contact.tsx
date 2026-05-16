@@ -140,16 +140,18 @@ export default function Contact() {
         </AnimatePresence>
 
         <p style={{ textAlign: 'center', marginTop: 32, fontSize: 13, color: 'var(--text-tertiary)' }}>
-          Or reach out directly {' '}
+          Or reach out directly{' '}
           <a
-            href="mailto:mifab2026@gmail.com"
+            href="https://t.me/mif_ab"
             className="text-green"
+            target="_blank"
+            rel="noopener noreferrer"
             data-hover
             style={{ opacity: 0.8, transition: 'opacity 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
             onMouseLeave={e => (e.currentTarget.style.opacity = '0.8')}
           >
-            mifab2026@gmail.com
+            on Telegram
           </a>
         </p>
       </div>

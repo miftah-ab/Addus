@@ -56,7 +56,7 @@ export default function Hero() {
           display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', justifyContent: 'center',
         }}
       >
-        <span>AI systems that</span>
+        <span>AI systems that </span>
         <MorphingText words={MORPH_WORDS} interval={2200} />
       </div>
 

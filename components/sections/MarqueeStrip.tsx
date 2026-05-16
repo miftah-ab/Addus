@@ -1,4 +1,4 @@
-const ITEMS = ['AI Automation', 'SaaS Development', 'Addus', 'Built to ship', 'Full Stack', 'Real products', 'AI Systems', 'Automation', 'We build what\'s next']
+const ITEMS = ['AI Automation', 'SaaS Development', 'Addus', 'Built to ship', 'Full Stack', 'Real products', 'AI Systems', 'Automation', 'I build what\'s next']
 
 export default function MarqueeStrip() {
   const doubled = [...ITEMS, ...ITEMS]

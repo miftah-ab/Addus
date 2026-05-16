@@ -92,8 +92,7 @@ export default function About() {
             {[
               'I build AI products and automation systems that actually work.',
               'Shipping products from scratch auth, payments, databases, deployment, AI integration. The full stack.',
-              'Founded Addus to build systems for businesses that are ready to move faster with AI.',
-              'Currently: open to full-time roles and interesting freelance projects.',
+              'Addus builds systems for businesses that are ready to move faster with AI.',
             ].map((text, i) => (
               <p key={i} style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 {text}
