@@ -6,7 +6,7 @@ export interface Project {
   live_url?: string
   github_url?: string
   image_url?: string
-  category: 'ai-tools' | 'saas' | 'automation'
+  category: 'ai-tools' | 'saas' | 'automation' | 'mobile'
   featured?: boolean
   order_index?: number
 }

@@ -8,16 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'bg-primary': '#080808',
-        'bg-secondary': '#0F0F0F',
-        'bg-tertiary': '#141414',
-        'accent-green': '#00FF88',
-        'accent-purple': '#7B61FF',
+        'bg-primary':   'var(--bg-primary)',
+        'bg-secondary': 'var(--bg-secondary)',
+        'bg-tertiary':  'var(--bg-tertiary)',
+        accent:         'var(--accent)',
       },
       fontFamily: {
         clash: ['Clash Display', 'sans-serif'],
         geist: ['var(--font-geist)', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
+        mono:  ['var(--font-geist-mono)', 'monospace'],
       },
     },
   },

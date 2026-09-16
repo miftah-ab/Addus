@@ -4,7 +4,7 @@ export const STATIC_PROJECTS: Project[] = [
   {
     id: '1',
     name: 'LaunchFast',
-    description: 'Production-ready Next.js SaaS starter with auth, Stripe payments, and Supabase built in.',
+    description: 'Production-ready Next.js SaaS starter with authentication, Stripe payments, and Supabase built in. Clone and ship.',
     tech_stack: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Vercel'],
     live_url: 'https://launchfast-sigma.vercel.app',
     github_url: 'https://github.com/miftah-ab/launchfast',
@@ -16,7 +16,7 @@ export const STATIC_PROJECTS: Project[] = [
   {
     id: '2',
     name: 'Emitto',
-    description: 'AI engine that turns GitHub commits into LinkedIn posts and X threads automatically.',
+    description: 'AI engine that turns GitHub commits into LinkedIn posts and X threads automatically. Connect your repo, get content.',
     tech_stack: ['Next.js', 'TypeScript', 'Groq AI', 'GitHub API', 'Supabase'],
     live_url: 'https://emitto-engine.vercel.app',
     github_url: 'https://github.com/miftah-ab/emitto',
@@ -28,12 +28,22 @@ export const STATIC_PROJECTS: Project[] = [
   {
     id: '3',
     name: 'Zare',
-    description: 'Ethiopian dating platform built inside Telegram. Culturally relevant matching based on ethnicity, language, religion, and dating goals. Ethiopian payments (Telebirr, CBE, Telegram Stars), premium subscription tiers, and a real-time admin moderation dashboard.',
+    description: 'Ethiopian dating platform built inside Telegram. Culturally relevant matching by ethnicity, language, religion, and dating goals — with native Ethiopian payments and a real-time admin dashboard.',
     tech_stack: ['Cloudflare Workers', 'Telegram Bot API', 'React', 'Vite', 'Tailwind CSS', 'Telebirr'],
+    live_url: 'https://t.me/ZareOfficialBot',
     category: 'saas',
     order_index: 3,
-    live_url: 'https://t.me/ZareOfficialBot',
     image_url: '/projects/zare.png',
+  },
+  {
+    id: '4',
+    name: 'Adera SMS',
+    description: 'Android utility that automatically responds to missed calls with a customizable SMS message. A missed call doesn\'t have to be a missed opportunity.',
+    tech_stack: ['Android', 'Kotlin', 'SmsManager API'],
+    live_url: 'https://adera-sms.vercel.app',
+    category: 'mobile',
+    featured: true,
+    order_index: 4,
   },
 ]
 

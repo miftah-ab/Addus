@@ -13,50 +13,64 @@ export default function CommitCard({ commit, index }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       className="commit-card"
+      aria-label={`Commit: ${commit.message} in ${commit.repoDisplay}, ${commit.date}`}
       style={{
-        animation: `slide-in-from-right 0.5s ease ${index * 0.08}s both`,
+        animation: `fade-up 0.45s ease ${index * 0.07}s both`,
         textDecoration: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 16,
       }}
-      data-hover
     >
-      {/* Pulse dot */}
-      <div style={{ flexShrink: 0 }}>
+      {/* Indicator dot */}
+      <div style={{ flexShrink: 0 }} aria-hidden="true">
         <div
           style={{
-            width: 8, height: 8, borderRadius: '50%',
-            background: 'var(--accent-green)',
+            width: 7,
+            height: 7,
+            borderRadius: '50%',
+            background: 'var(--accent)',
             animation: commit.isToday ? 'pulse-dot 2s ease-in-out infinite' : 'none',
-            opacity: commit.isToday ? 1 : 0.4,
+            opacity: commit.isToday ? 1 : 0.3,
           }}
         />
       </div>
 
-      {/* Repo pill */}
-      <span className="pill pill-green" style={{ flexShrink: 0, fontFamily: 'var(--font-geist-mono)', fontSize: 11 }}>
+      {/* Repo */}
+      <span
+        className="pill pill-accent"
+        style={{ flexShrink: 0, fontFamily: 'var(--font-geist-mono)', fontSize: 10 }}
+      >
         {commit.repoDisplay}
       </span>
 
       {/* Message */}
       <span
         style={{
-          flex: 1, fontSize: 14, color: 'var(--text-primary)',
-          fontFamily: 'var(--font-geist-mono)', overflow: 'hidden',
-          textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          flex: 1,
+          fontSize: 13,
+          color: 'var(--text-primary)',
+          fontFamily: 'var(--font-geist-mono)',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
         }}
       >
         {commit.message}
       </span>
 
       {/* Time */}
-      <span style={{ flexShrink: 0, fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'var(--font-geist-mono)' }}>
+      <span
+        style={{
+          flexShrink: 0,
+          fontSize: 11,
+          color: 'var(--text-tertiary)',
+          fontFamily: 'var(--font-geist-mono)',
+        }}
+      >
         {commit.date}
       </span>
 
-      {/* Arrow */}
-      <span className="text-green" style={{ flexShrink: 0, opacity: 0.5, fontSize: 14 }}>→</span>
+      <span style={{ flexShrink: 0, color: 'var(--accent)', opacity: 0.5, fontSize: 12 }} aria-hidden="true">
+        →
+      </span>
     </a>
   )
 }

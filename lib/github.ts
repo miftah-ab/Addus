@@ -1,6 +1,6 @@
 import { CommitData } from './types'
 
-const REPOS = ['ki706/launchfast', 'ki706/folio']
+const REPOS = ['miftah-ab/launchfast', 'miftah-ab/emitto']
 
 // Simple in-memory cache
 let cache: { data: CommitData[]; ts: number } | null = null
@@ -21,9 +21,11 @@ function timeAgo(dateStr: string): string {
 function isToday(dateStr: string): boolean {
   const d = new Date(dateStr)
   const now = new Date()
-  return d.getFullYear() === now.getFullYear() &&
+  return (
+    d.getFullYear() === now.getFullYear() &&
     d.getMonth() === now.getMonth() &&
     d.getDate() === now.getDate()
+  )
 }
 
 export async function fetchRecentCommits(): Promise<CommitData[]> {
@@ -38,19 +40,29 @@ export async function fetchRecentCommits(): Promise<CommitData[]> {
   try {
     const results = await Promise.allSettled(
       REPOS.map(repo =>
-        fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`, { headers, next: { revalidate: 300 } })
-          .then(r => r.ok ? r.json() : [])
-          .then((commits: Array<{ sha: string; html_url: string; commit: { message: string; author: { date: string } } }>) =>
-            commits.map(c => ({
-              repo,
-              repoDisplay: repo.split('/')[1],
-              message: c.commit.message.split('\n')[0].slice(0, 72),
-              date: timeAgo(c.commit.author.date),
-              url: c.html_url,
-              sha: c.sha.slice(0, 7),
-              isToday: isToday(c.commit.author.date),
-              _raw: new Date(c.commit.author.date).getTime(),
-            }))
+        fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`, {
+          headers,
+          next: { revalidate: 300 },
+        })
+          .then(r => (r.ok ? r.json() : []))
+          .then(
+            (
+              commits: Array<{
+                sha: string
+                html_url: string
+                commit: { message: string; author: { date: string } }
+              }>
+            ) =>
+              commits.map(c => ({
+                repo,
+                repoDisplay: repo.split('/')[1],
+                message: c.commit.message.split('\n')[0].slice(0, 72),
+                date: timeAgo(c.commit.author.date),
+                url: c.html_url,
+                sha: c.sha.slice(0, 7),
+                isToday: isToday(c.commit.author.date),
+                _raw: new Date(c.commit.author.date).getTime(),
+              }))
           )
       )
     )

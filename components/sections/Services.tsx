@@ -2,30 +2,42 @@
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
 
-const SERVICES = [
+const CAPABILITIES = [
   {
     num: '01',
-    title: 'AI Automation Systems',
-    description: 'I build AI agents that qualify leads, process documents, automate workflows, and handle repetitive tasks so your team focuses on what matters.',
-    pill: 'Most popular',
+    title: 'Full-Stack Applications',
+    description:
+      'Complete web applications with frontend interfaces, backend logic, databases, authentication, APIs, and deployment. From blank repo to a working product.',
   },
   {
     num: '02',
-    title: 'Custom SaaS Products',
-    description: 'Full stack web applications with auth, payments, databases, and deployment. End to end. Shipped fast. Built to scale.',
-    pill: null,
+    title: 'AI-Powered Products',
+    description:
+      'Useful AI features, LLM integrations, intelligent workflows, and product-specific AI functionality that solves real problems rather than adding noise.',
   },
   {
     num: '03',
-    title: 'AI Integration',
-    description: 'Take your existing business and make it intelligent. I add AI to your workflows, customer touchpoints, and internal tools.',
-    pill: null,
+    title: 'SaaS Products',
+    description:
+      'Multi-user software with business logic, dashboards, authentication, data management, subscriptions, and third-party integrations.',
+  },
+  {
+    num: '04',
+    title: 'Automation Systems',
+    description:
+      'APIs, bots, integrations, and workflows that connect systems and reduce repetitive work. Built to run reliably without constant supervision.',
+  },
+  {
+    num: '05',
+    title: 'Mobile Applications',
+    description:
+      'Practical mobile applications designed around real user problems, clear user flows, and the specific capabilities of the mobile platform.',
   },
 ]
 
-function ServiceCard({ s, index }: { s: typeof SERVICES[0]; index: number }) {
+function CapabilityCard({ cap, index }: { cap: (typeof CAPABILITIES)[0]; index: number }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
     <div
@@ -33,68 +45,80 @@ function ServiceCard({ s, index }: { s: typeof SERVICES[0]; index: number }) {
       className="service-card"
       style={{
         opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(32px)',
-        transition: `opacity 0.7s ease ${index * 0.12}s, transform 0.7s ease ${index * 0.12}s`,
-        flex: '1 1 280px',
+        transform: inView ? 'translateY(0)' : 'translateY(24px)',
+        transition: `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`,
+        flex: '1 1 260px',
       }}
     >
-      <div className="font-clash text-dimmed" style={{ fontSize: 72, lineHeight: 1, marginBottom: 24, opacity: 0.2 }}>
-        {s.num}
+      <div
+        style={{
+          fontFamily: 'var(--font-geist-mono)',
+          fontSize: 11,
+          color: 'var(--text-tertiary)',
+          letterSpacing: '0.1em',
+          marginBottom: 20,
+        }}
+      >
+        {cap.num}
       </div>
-      <h3 className="font-clash" style={{ fontSize: 26, color: 'var(--text-primary)', marginBottom: 16, lineHeight: 1.2 }}>
-        {s.title}
+      <h3
+        className="font-clash"
+        style={{ fontSize: 21, color: 'var(--text-primary)', marginBottom: 12, lineHeight: 1.2, fontWeight: 600 }}
+      >
+        {cap.title}
       </h3>
-      <p style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7, flex: 1 }}>
-        {s.description}
+      <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+        {cap.description}
       </p>
-      {s.pill && (
-        <div style={{ marginTop: 28 }}>
-          <span className="pill pill-green" style={{ fontSize: 11 }}>{s.pill}</span>
-        </div>
-      )}
     </div>
   )
 }
 
 export default function Services() {
   const headRef = useRef(null)
-  const inView = useInView(headRef, { once: true, margin: '-80px' })
+  const inView = useInView(headRef, { once: true, margin: '-60px' })
 
   return (
     <section
-      id="services"
+      id="capabilities"
       style={{
         padding: '120px 80px',
-        background: 'var(--bg-primary)',
+        background: 'var(--bg-secondary)',
         position: 'relative',
         zIndex: 1,
       }}
     >
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <span id="services-label" className="section-label">{'// what I build'}</span>
+        <span className="section-label">What I build</span>
 
         <div
           ref={headRef}
-          id="services-header"
           style={{
             opacity: inView ? 1 : 0,
-            transform: inView ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'opacity 0.7s ease, transform 0.7s ease',
+            transform: inView ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+            marginBottom: 60,
           }}
         >
-          <h2 id="services-headline" className="font-clash text-display" style={{ color: 'var(--text-primary)', marginBottom: 64 }}>
-            Three things.<br />Done right.
+          <h2
+            id="capabilities-headline"
+            className="font-clash text-display"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            What I build.
           </h2>
         </div>
 
-        <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-          {SERVICES.map((s, i) => <ServiceCard key={s.num} s={s} index={i} />)}
+        <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap' }}>
+          {CAPABILITIES.map((cap, i) => (
+            <CapabilityCard key={cap.num} cap={cap} index={i} />
+          ))}
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 1024px) { #services { padding: 80px 40px !important; } }
-        @media (max-width: 767px) { #services { padding: 80px 24px !important; } #services .service-card { padding: 28px !important; } }
+        @media (max-width: 1024px) { #capabilities { padding: 80px 40px !important; } }
+        @media (max-width: 767px) { #capabilities { padding: 80px 24px !important; } }
       `}</style>
     </section>
   )

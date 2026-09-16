@@ -5,7 +5,7 @@ import Navigation from '@/components/ui/Navigation'
 import Footer from '@/components/ui/Footer'
 import CustomCursor from '@/components/ui/CustomCursor'
 import BackToTop from '@/components/ui/BackToTop'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
   variable: '--font-geist',
@@ -22,24 +22,37 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Addus I Build What's Next",
-  description: 'Addus is an AI products and automation company. I build AI systems, SaaS products, and automation tools that work from day one. Founded by Miftah Abate.',
-  keywords: ['AI automation', 'SaaS development', 'AI integration', 'full stack development', 'Miftah Abate', 'Addus'],
+  title: 'Miftah Abate — Full-Stack Developer',
+  description:
+    'Full-stack developer building web applications, AI products, SaaS platforms, automation systems and mobile applications.',
+  keywords: [
+    'full-stack developer',
+    'web development',
+    'AI products',
+    'SaaS',
+    'automation',
+    'mobile',
+    'Miftah Abate',
+    'remote developer',
+    'contract developer',
+  ],
   authors: [{ name: 'Miftah Abate' }],
   icons: {
     icon: '/symbol.png',
     apple: '/symbol.png',
   },
   openGraph: {
-    title: "Addus I Build What's Next",
-    description: 'AI products and automation. Built to ship.',
+    title: 'Miftah Abate — Full-Stack Developer',
+    description:
+      'Full-stack developer building web applications, AI products, SaaS platforms, automation systems and mobile applications.',
     type: 'website',
     url: 'https://addus.xyz',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Addus I Build What's Next",
-    description: 'AI products and automation. Built to ship.',
+    title: 'Miftah Abate — Full-Stack Developer',
+    description:
+      'Full-stack developer building web applications, AI products, SaaS platforms, automation systems and mobile applications.',
   },
 }
 
@@ -52,6 +65,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap"
           rel="stylesheet"
         />
+        {/* Theme init — must run before paint to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                try{
+                  var t=localStorage.getItem('theme');
+                  document.documentElement.setAttribute('data-theme', t==='dark'?'dark':'light');
+                }catch(e){
+                  document.documentElement.setAttribute('data-theme','light');
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         <CustomCursor />
@@ -60,18 +88,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <BackToTop />
         <Analytics />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              document.addEventListener('mousemove', function(e) {
-                var x = (e.clientX / window.innerWidth) * 100;
-                var y = (e.clientY / window.innerHeight) * 100;
-                document.documentElement.style.setProperty('--mouse-x', x + '%');
-                document.documentElement.style.setProperty('--mouse-y', y + '%');
-              });
-            `,
-          }}
-        />
       </body>
     </html>
   )
