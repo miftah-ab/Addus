@@ -76,7 +76,7 @@ export default function About() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <a
-              href="https://www.linkedin.com/in/miftah-abate-addus"
+              href="https://www.linkedin.com/in/miftah-abate-dev"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -122,7 +122,7 @@ export default function About() {
               I&apos;m a developer focused on building practical software from the ground up.
             </p>
             <p style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.85 }}>
-              My background is in Information Systems, but my strongest learning has come from actually building — taking ideas, figuring out the technical requirements, writing the code, integrating the necessary services, and getting the result running.
+              My background is in Information Systems, but my strongest learning has come from actually building: taking ideas, figuring out the technical requirements, writing the code, integrating the necessary services, and getting the result running.
             </p>
             <p style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.85 }}>
               I enjoy working across the stack and especially like products where software, AI, and automation come together to solve a real problem.

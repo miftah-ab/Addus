@@ -16,7 +16,7 @@ const STEPS = [
   {
     num: '03',
     title: 'Build',
-    description: 'Implement across the required layers — frontend, backend, mobile, AI, or automation — with the actual product in mind.',
+    description: 'Implement across the required layers (frontend, backend, mobile, AI, or automation) with the actual product in mind.',
   },
   {
     num: '04',

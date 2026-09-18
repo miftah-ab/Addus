@@ -121,7 +121,7 @@ export default function Availability() {
             </svg>
           </a>
           <a
-            href="https://www.linkedin.com/in/miftah-abate-addus"
+            href="https://www.linkedin.com/in/miftah-abate-dev"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-ghost"

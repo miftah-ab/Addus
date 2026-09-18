@@ -5,6 +5,7 @@ import Navigation from '@/components/ui/Navigation'
 import Footer from '@/components/ui/Footer'
 import CustomCursor from '@/components/ui/CustomCursor'
 import BackToTop from '@/components/ui/BackToTop'
+import SmoothScrollHandler from '@/components/ui/SmoothScrollHandler'
 import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
@@ -22,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Miftah Abate — Full-Stack Developer',
+  title: 'Miftah Abate | Full-Stack Developer',
   description:
     'Full-stack developer building web applications, AI products, SaaS platforms, automation systems and mobile applications.',
   keywords: [
@@ -42,15 +43,15 @@ export const metadata: Metadata = {
     apple: '/symbol.png',
   },
   openGraph: {
-    title: 'Miftah Abate — Full-Stack Developer',
+    title: 'Miftah Abate | Full-Stack Developer',
     description:
       'Full-stack developer building web applications, AI products, SaaS platforms, automation systems and mobile applications.',
     type: 'website',
-    url: 'https://addus.xyz',
+    url: 'https://miftah-ab.vercel.app',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Miftah Abate — Full-Stack Developer',
+    title: 'Miftah Abate | Full-Stack Developer',
     description:
       'Full-stack developer building web applications, AI products, SaaS platforms, automation systems and mobile applications.',
   },
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         <CustomCursor />
         <Navigation />
+        <SmoothScrollHandler />
         <main>{children}</main>
         <Footer />
         <BackToTop />

@@ -93,7 +93,7 @@ export default function FeaturedProject() {
             <div>
               <CaseBlock title="The Problem">
                 <p>
-                  When you miss a call, you often miss the moment to respond before it passes. Most people have no way to automatically let callers know they&apos;re unavailable — the caller hangs up with no information, and the opportunity is gone.
+                  When you miss a call, you often miss the moment to respond before it passes. Most people have no way to automatically let callers know they&apos;re unavailable, so the caller hangs up with no information, and the opportunity is gone.
                 </p>
               </CaseBlock>
 
@@ -108,7 +108,7 @@ export default function FeaturedProject() {
                   <li>Missed call detection using Android telephony APIs</li>
                   <li>Automatic SMS dispatch triggered on missed call events</li>
                   <li>Customizable reply message templates</li>
-                  <li>Offline-first — no internet connection required</li>
+                  <li>Offline-first, no internet connection required</li>
                   <li>Product landing page at adera-sms.vercel.app</li>
                 </ul>
               </CaseBlock>
@@ -152,7 +152,7 @@ export default function FeaturedProject() {
                   >
                     adera-sms.vercel.app
                   </a>
-                  . The core use case — automatic SMS on missed call — is fully implemented.
+                  . The core use case (automatic SMS on missed call) is fully implemented.
                 </p>
               </CaseBlock>
             </div>

@@ -28,7 +28,7 @@ export const STATIC_PROJECTS: Project[] = [
   {
     id: '3',
     name: 'Zare',
-    description: 'Ethiopian dating platform built inside Telegram. Culturally relevant matching by ethnicity, language, religion, and dating goals — with native Ethiopian payments and a real-time admin dashboard.',
+    description: 'Ethiopian dating platform built inside Telegram. Culturally relevant matching by ethnicity, language, religion, and dating goals, with native Ethiopian payments and a real-time admin dashboard.',
     tech_stack: ['Cloudflare Workers', 'Telegram Bot API', 'React', 'Vite', 'Tailwind CSS', 'Telebirr'],
     live_url: 'https://t.me/ZareOfficialBot',
     category: 'saas',

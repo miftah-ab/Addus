@@ -11,7 +11,7 @@ export default function Footer() {
 
   const socialLinks = [
     { label: 'GitHub',   href: 'https://github.com/miftah-ab' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/miftah-abate-addus' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/miftah-abate-dev' },
     { label: 'X',        href: 'https://x.com/Mif_Abate' },
   ]
 
@@ -54,7 +54,7 @@ export default function Footer() {
               REMOTE · CONTRACT · FREELANCE
             </p>
             <p style={{ fontSize: 13, color: 'var(--text-tertiary)', lineHeight: 1.7, maxWidth: 300 }}>
-              Building practical software from the ground up — frontend, backend, AI, and mobile.
+              Building practical software from the ground up: frontend, backend, AI, and mobile.
             </p>
           </div>
 

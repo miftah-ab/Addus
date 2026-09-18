@@ -90,7 +90,7 @@ export default function Navigation() {
           href="#"
           id="nav-home"
           style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-          aria-label="Miftah Abate — home"
+          aria-label="Miftah Abate home"
         >
           <span
             className="font-clash"

@@ -20,7 +20,7 @@ export default function Contact() {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Portfolio contact from ${form.name}`,
-          from_name: 'Portfolio — Miftah Abate',
+          from_name: 'Portfolio | Miftah Abate',
           name: form.name,
           email: form.email,
           message: form.message,
@@ -101,10 +101,10 @@ export default function Contact() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ opacity: 0.55, flexShrink: 0 }}>
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.01 9.47c-.144.652-.53.815-1.073.505l-2.97-2.188-1.434 1.38c-.158.158-.292.292-.6.292l.213-3.03 5.52-4.988c.24-.213-.052-.332-.374-.118l-6.822 4.298-2.94-.917c-.64-.2-.65-.64.134-.95l11.462-4.42c.534-.196 1.001.118.894.666z" />
               </svg>
-              Telegram — @mif_ab
+              Message on Telegram
             </a>
             <a
-              href="https://www.linkedin.com/in/miftah-abate-addus"
+              href="https://www.linkedin.com/in/miftah-abate-dev"
               target="_blank"
               rel="noopener noreferrer"
               style={{

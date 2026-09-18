@@ -83,7 +83,7 @@ export default function Hero() {
             animation: mounted ? 'fade-up 0.7s ease 0.28s both' : undefined,
           }}
         >
-          I turn ideas and complex requirements into complete digital products — from frontend and backend systems to AI integrations, automation, mobile applications, and deployment.
+          I turn ideas and complex requirements into complete digital products: from frontend and backend systems to AI integrations, automation, mobile applications, and deployment.
         </p>
 
         {/* Availability badge */}

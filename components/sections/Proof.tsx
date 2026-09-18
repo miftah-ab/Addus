@@ -79,7 +79,7 @@ export default function Proof() {
             <span style={{ color: 'var(--text-secondary)' }}>I build products.</span>
           </h2>
           <p style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
-            My work spans full-stack web applications, SaaS platforms, AI-powered products, automation systems, and mobile applications. I care about the entire product — architecture, user experience, implementation, integrations, deployment, and what happens after the software reaches real users.
+            My work spans full-stack web applications, SaaS platforms, AI-powered products, automation systems, and mobile applications. I care about the entire product: architecture, user experience, implementation, integrations, deployment, and what happens after the software reaches real users.
           </p>
         </div>
 
