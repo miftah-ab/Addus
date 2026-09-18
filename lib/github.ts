@@ -1,6 +1,12 @@
 import { CommitData } from './types'
 
-const REPOS = ['miftah-ab/launchfast', 'miftah-ab/emitto']
+const FALLBACK_REPOS = [
+  'miftah-ab/ShipPulse',
+  'miftah-ab/Addus',
+  'miftah-ab/adera-sms',
+  'miftah-ab/emitto',
+  'miftah-ab/launchfast',
+]
 
 // Simple in-memory cache
 let cache: { data: CommitData[]; ts: number } | null = null
@@ -33,13 +39,35 @@ export async function fetchRecentCommits(): Promise<CommitData[]> {
 
   const headers: Record<string, string> = {
     Accept: 'application/vnd.github.v3+json',
+    'User-Agent': 'MiftahAbate-Portfolio',
   }
   const token = process.env.GITHUB_TOKEN
   if (token) headers['Authorization'] = `Bearer ${token}`
 
   try {
+    // 1. Fetch user's most recently active repositories
+    let targetRepos = FALLBACK_REPOS
+    try {
+      const reposRes = await fetch(
+        'https://api.github.com/users/miftah-ab/repos?sort=pushed&per_page=6',
+        { headers, next: { revalidate: 300 } }
+      )
+      if (reposRes.ok) {
+        const repoData: Array<{ full_name: string; fork: boolean }> = await reposRes.json()
+        const recentNames = repoData
+          .filter(r => !r.fork)
+          .map(r => r.full_name)
+        if (recentNames.length > 0) {
+          targetRepos = recentNames.slice(0, 5)
+        }
+      }
+    } catch {
+      // Use fallback list if repos endpoint fails
+    }
+
+    // 2. Fetch recent commits for each active repository
     const results = await Promise.allSettled(
-      REPOS.map(repo =>
+      targetRepos.map(repo =>
         fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`, {
           headers,
           next: { revalidate: 300 },
@@ -69,7 +97,9 @@ export async function fetchRecentCommits(): Promise<CommitData[]> {
 
     const all: (CommitData & { _raw?: number })[] = []
     for (const r of results) {
-      if (r.status === 'fulfilled') all.push(...r.value)
+      if (r.status === 'fulfilled' && Array.isArray(r.value)) {
+        all.push(...r.value)
+      }
     }
 
     const sorted = all
