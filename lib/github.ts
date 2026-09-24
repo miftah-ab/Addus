@@ -4,8 +4,6 @@ const FALLBACK_REPOS = [
   'miftah-ab/ShipPulse',
   'miftah-ab/Addus',
   'miftah-ab/adera-sms',
-  'miftah-ab/emitto',
-  'miftah-ab/launchfast',
 ]
 
 // Simple in-memory cache

@@ -14,7 +14,15 @@ export default function Contact() {
     e.preventDefault()
     setState('loading')
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      // 1. Submit to /api/contact (instant Telegram bot alert & Supabase)
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      // 2. Also forward to Web3Forms as an email backup
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -25,9 +33,10 @@ export default function Contact() {
           email: form.email,
           message: form.message,
         }),
-      })
+      }).catch(() => {})
+
       const data = await res.json()
-      if (data.success) {
+      if (res.ok && data.success) {
         setState('success')
         setForm({ name: '', email: '', message: '' })
       } else {
